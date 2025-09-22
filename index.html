@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>FreshMart — Fruits & Vegetables</title>
+
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="style.css" />
+  <script src="script.js"></script>
+  <script src="jquery-3.7.1.min.js"></script>
+  
+</head>
+<body>
+
+  <header class="nav-wrap">
+    <nav class="nav container">
+      <a class="brand" href="#home">🛒Fresh<span>Mart</span></a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle theme"><i class="fa fa-moon"></i></button>
+        <button id="menuBtn" class="icon-btn mobile-only" aria-label="Open menu"><i class="fa fa-bars"></i></button>
+
+      
+      </div>
+      <button id="signupBtn" class=" btn btn-signup">Sign Up</button>
+      
+  </div>
+
+    </nav>
+
+    <div class="mobile-drawer" id="mobileDrawer">
+      <button id="closeDrawer" class="close-drawer">&times;</button>
+      <ul>
+        <li><a href="#home" class="drawer-link">Home</a></li>
+        <li><a href="#products" class="drawer-link">Products</a></li>
+        <li><a href="#about" class="drawer-link">About</a></li>
+        <li><a href="#contact" class="drawer-link">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="container hero-inner">
+      <div class="hero-text">
+        <h1>Fresh & Organic <span>Fruits</span> & <span>Vegetables</span></h1>
+        <p>Direct from local farms to your table. Seasonal, fresh, and delicious.</p>
+        <a href="#products" class="btn btn-info shop">Shop Fresh</a>
+      </div>
+      <div class="hero-image" aria-hidden="true">
+        <img src="hero-fruits.png" alt="fresh fruits" />
+      </div>
+    </div>
+  </section>
+  <section>
+  <div id="loginContainer" class="login-container ">
+    <div id="loginForm" class="form-box active ">
+      <h2>Sign in</h2>
+      <form>
+        <div class="input-group">
+          <i class="fas fa-user left-icon"></i>
+          <input type="text" placeholder="Username" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock left-icon"></i>
+          <input id="password" type="password" placeholder="Password" required>
+          <i class="fas fa-eye right-icon toggle-password" onclick="togglePassword()"></i>
+        </div>
+        <button type="submit">Login</button>
+      </form>
+
+      <div class="extra">
+        <p>Forgot your password? <a class="reset" href="#">Reset</a></p>
+        <p>New here? <a onclick="showRegister()">Create Account</a></p>
+      </div>
+    </div>
+
+    <div id="registerForm" class="form-box">
+      <h2>Create Account</h2>
+      <form>
+        <div class="input-group">
+          <i class="fas fa-user left-icon"></i>
+          <input type="text" placeholder="Full Name" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-envelope left-icon"></i>
+          <input type="email" placeholder="Email" required>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock left-icon"></i>
+          <input id="regPassword" type="password" placeholder="Password" required>
+          <i class="fas fa-eye right-icon toggle-password" onclick="togglePassword('regPassword', this)"></i>
+        </div>
+        <div class="input-group">
+          <i class="fas fa-lock left-icon"></i>
+          <input id="confirmPassword" type="password" placeholder="Confirm Password" required>
+          <i class="fas fa-eye right-icon toggle-password" onclick="togglePassword('confirmPassword', this)"></i>
+        </div>
+        <button type="submit">Register</button>
+      </form>
+
+      <div class="extra">
+        <p>Already have an account? <a onclick="showLogin()">Login</a></p>
+      </div>
+    </div>
+  </div>
+  </section>
+
+  <section id="products" class="section products">
+    <div class="container">
+      <h2 class="section-title">Our Products</h2>
+      <p class="section-sub">Best seasonal picks — handpicked and quality checked.</p>
+
+      <div class="grid cards">
+        
+        <article class="card">
+          <div class="card-media">
+            <img src="apple.jpeg" alt="Apple">
+          </div>
+          <div class="card-body">
+            <h3>Fresh Apples</h3>
+            <p class="price">$2.50 <small>/ kg</small></p>
+            <p class="desc">Crisp, sweet apples — perfect for snacking and baking.</p>
+            <div class="card-foot">
+              <button class="btn btn-outline">View</button>
+              <button class="btn add-cart" data-name="Fresh Apples" data-price="2.50">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="Organic Carrots.jpeg" alt="Carrot">
+          </div>
+          <div class="card-body">
+            <h3>Organic Carrots</h3>
+            <p class="price">$1.20 <small>/ kg</small></p>
+            <p class="desc">Sweet and crunchy, great for juices and cooked meals.</p>
+            <div class="card-foot">
+              <button class="btn btn-outline">View</button>
+              <button class="btn add-cart" data-name="Organic Carrots" data-price="1.20">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+      
+        <article class="card">
+          <div class="card-media">
+            <img src="Juicy Tomatoes.jpeg" alt="Tomato">
+          </div>
+          <div class="card-body">
+            <h3>Juicy Tomatoes</h3>
+            <p class="price">$1.80 <small>/ kg</small></p>
+            <p class="desc">Ripe and red — perfect for salads and sauces.</p>
+            <div class="card-foot">
+              <button class="btn btn-outline">View</button>
+              <button class="btn add-cart" data-name="Juicy Tomatoes" data-price="1.80">Add to cart</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-media">
+            <img src="Green Broccoli.jpeg" alt="Broccoli">
+          </div>
+          <div class="card-body">
+            <h3>Green Broccoli</h3>
+            <p class="price">$3.00 <small>/ kg</small></p>
+            <p class="desc">Full of vitamins — steam, roast, or stir-fry.</p>
+            <div class="card-foot">
+              <button class="btn btn-outline">View</button>
+              <button class="btn add-cart" data-name="Green Broccoli" data-price="3.00">Add to cart</button>
+            </div>
+          </div>
+        </article>
+     
+        <article class="card">
+            <div class="card-media">
+                <img src="Fresh Bananas.jpeg" alt="Banana">
+            </div>
+            <div class="card-body">
+                <h3>Fresh Bananas</h3>
+                <p class="price">$1.10 <small>/ kg</small></p>
+                <p class="desc">Sweet and creamy, perfect for smoothies and snacks.</p>
+                <div class="card-foot">
+                <button class="btn btn-outline">View</button>
+                <button class="btn add-cart" data-name="Fresh Bananas" data-price="1.10">Add to cart</button>
+                </div>
+            </div>
+        </article>
+        
+        <article class="card">
+            <div class="card-media">
+                <img src="Crisp Cucumbers.jpeg" alt="Cucumber">
+            </div>
+            <div class="card-body">
+                <h3>Crisp Cucumbers</h3>
+                <p class="price">$0.80 <small>/ kg</small></p>
+                <p class="desc">Fresh and crunchy, perfect for salads and snacks.</p>
+                <div class="card-foot">
+                    <button class="btn btn-outline">View</button>
+                    <button class="btn add-cart" data-name="Crisp Cucumbers" data-price="0.80">Add to cart</button>
+                </div>
+            </div>
+        </article>
+       
+        <article class="card">
+            <div class="card-media">
+                <img src="Sweet Strawberries.jpeg" alt="Strawberries">
+            </div>
+            <div class="card-body">
+                <h3>Sweet Strawberries</h3>
+                <p class="price">$2.50 <small>/ kg</small></p>
+                <p class="desc">Juicy and sweet, perfect for desserts and snacks.</p>
+                <div class="card-foot">
+                    <button class="btn btn-outline">View</button>
+                    <button class="btn add-cart" data-name="Sweet Strawberries" data-price="2.50">Add to cart</button>
+                </div>
+            </div>
+        </article>
+        
+        <article class="card">
+            <div class="card-media">
+                <img src="Fresh Spinach.jpeg" alt="Spinach">
+            </div>
+            <div class="card-body">
+                <h3>Fresh Spinach</h3>
+                <p class="price">$2.00 <small>/ kg</small></p>
+                <p class="desc">Rich in iron and vitamins, perfect for salads and smoothies.</p>
+                <div class="card-foot">
+                    <button class="btn btn-outline">View</button>
+                    <button class="btn add-cart" data-name="Fresh Spinach" data-price="2.00">Add to cart</button>
+                </div>
+            </div>
+        </article>
+        
+        <article class="card">
+            <div class="card-media">
+                <img src="Fresh Herbs.jpeg" alt="Herbs">
+            </div>
+            <div class="card-body">
+                <h3>Fresh Herbs</h3>
+                <p class="price">$1.50 <small>/ bunch</small></p>
+                <p class="desc">Aromatic and flavorful, perfect for cooking and garnishing.</p>
+                <div class="card-foot">
+                    <button class="btn btn-outline">View</button>
+                    <button class="btn add-cart" data-name="Fresh Herbs" data-price="1.50">Add to cart</button>
+                </div>
+            </div>
+        </article>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <section id="about" class="section about">
+    <div class="container mt-5">
+      <h2 class="section-title">About Us</h2>
+      <div class="p-4 border rounded bg-flex shadow-sm mt-4">
+      <p>
+
+We partner with local farmers to deliver seasonal produce directly to your table. We're committed to minimal packaging, fair pricing for both you and our growers, and a quality guarantee. Our mission goes beyond just selling food; it's about building a healthier community.
+
+We believe in a food system that's fresh, local, and transparent. By choosing FreshMart, you're not only getting the best seasonal picks, but you're also supporting sustainable agriculture and the hardworking families who cultivate our land. Together, we can make a difference, one delicious meal at a time.</p>
+  </div>  
+</div>
+  </section>
+
+ 
+  <section id="contact" class="section contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <form class="contact-form" id="contactForm">
+        <input type="text" placeholder="Your name" required />
+        <input type="email" placeholder="Your email" required />
+        <input type ="number" placeholder="Your mobile number" required />
+        <textarea placeholder="Message"></textarea>
+        <button class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  
+
+<footer class="footer">
+  <div class="footer-container">
+   
+    <div class="footer-about">
+      <h3>🛒Fresh<span>Mart</span></h3>
+      <p>Thank you for visiting Fresh<span>Mart</span>.<br> We are committed to providing the best service. <br> Connect with us over socials.</p>
+      <p>Keep Rising 🚀.<br> Connect with us over live chat!</p>
+    </div>
+
+
+    <div class="footer-links">
+      <h3>quick links</h3>
+      <ul>
+        <li><a href="#home" class="nav-link">Home</a></li>
+        <li><a href="#products" class="nav-link">Products</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+      </ul>
+     
+    </div>
+
+   
+    <div class="footer-contact">
+      <h3>contact info</h3>
+      <p>📞 +880 184 4824 334</p>
+      <p>✉️ saifulshakib38@gmail.com</p>
+      <p>📍 Chattogram, Bangladesh</p>
+                    <div class="social-icons">
+                        <a href="https://www.facebook.com/Shakib.st.saiful24"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://twitter.com/saifulshakib1"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/saiful-islam-42171b307"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="https://github.com/saiful-aj18"><i class="fab fa-github"></i></a>
+                    </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>Designed with ❤️ by <span>Saiful Islam</span></p>
+  </div>
+</footer>
+
+  <div id="cartFab" class="cart-fab" title="Open cart">
+    <i class="fa fa-shopping-cart"></i>
+    <span id="cartBadge">0</span>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      
+      $(".hamburger").on("click", function(){
+        $(".nav-links").toggleClass("active");
+      });
+
+      $("#signupBtn").on("click", function(){
+        $("#loginContainer").fadeIn();
+        showLogin();
+      });
+    });
+
+   
+    function showRegister(){
+      $("#loginForm").removeClass("active").hide();
+      $("#registerForm").addClass("active").show();
+    }
+
+
+    function showLogin(){
+      $("#registerForm").removeClass("active").hide();
+      $("#loginForm").addClass("active").show();
+    }
+  </script>
+</body>
+</html>
