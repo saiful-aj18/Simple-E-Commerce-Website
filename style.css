@@ -298,10 +298,6 @@ h1 span,
     .extra a.reset { color:var(--secondary-color); }
 
 
-
-
-    
-
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -314,7 +310,7 @@ h1 span,
       }
     }
 
-    /* Hide forms */
+    
     .form-box {
       display: none;
     }
@@ -322,7 +318,7 @@ h1 span,
       display: block;
     }
 
-/* HERO */
+
 .hero {
   background: var(--bg-light);
   padding: 4rem 0;
@@ -363,7 +359,7 @@ h1 span,
   box-shadow: var(--shadow);
 }
 
-/* SECTIONS */
+
 .section {
   padding: 4rem 0;
 }
@@ -384,7 +380,7 @@ h1 span,
   color: #aaa;
 }
 
-/* PRODUCTS */
+
 .products .grid {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
 }
@@ -444,7 +440,7 @@ h1 span,
   display: flex-box;
   box-shadow: var(--shadow);
 }
-/* CONTACT */
+
 .contact-form {
   max-width: 600px;
   margin: 0 auto;
@@ -474,33 +470,6 @@ h1 span,
   min-height: 120px;
 }
 
-/* FOOTER 
-.site-footer {
-  background-color: var(--text-dark-light);
-  color: var(--text-light-dark);
-  padding: 2rem 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.site-footer a {
-  color: var(--text-light-dark);
-  transition: color 0.3s;
-}
-
-.site-footer a:hover {
-  color: var(--primary-color);
-}
-
-.socials a {
-  font-size: 1.25rem;
-  margin-left: 1rem;
-}*/
- /* Footer Styles */
 .footer {
   background-color: #030135;
   color: #fff;
@@ -597,7 +566,7 @@ span {
     .social-icons a.linkedin { color: #0a66c2; }
 
 
-/* CART FAB */
+
 .cart-fab {
   position: fixed;
   bottom: 2rem;
@@ -632,7 +601,7 @@ span {
   padding: 0.2rem 0.4rem;
 }
 
-/* Responsive */
+
 @media (max-width: 768px) {
   .nav-links {
     display: none;
@@ -652,4 +621,5 @@ span {
     gap: 1rem;
     text-align: center;
   }
+
 }
